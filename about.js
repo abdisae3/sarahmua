@@ -1,16 +1,20 @@
 about=()=> {
 document.getElementById('app').innerHTML= `
 <section>
-<div class="pbs-80 bg-main pt-5">
-	<div class=" clear-fix m-5">
-			<img src="./image/download.jpeg" class="image rounded-circle float-left m-3" alt="fauzi">
-			<h1 class="upcase f-md-28">sarah naumi</h1>
-			<h6 class="caps f-md-20 wrap m-3">make up artis| freelance</h6><hr>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minima magni, mollitia sed iure doloribus dolor perferendis laboriosam? Ab, aliquid?</p></p>
+<div class="container about">
+	<div class=" clear-fix row about">
+			<img src="./image/download.jpeg" class="" alt="fauzi">
+			<div class="about">
+			<h1 >sarah naumi</h1>
+			<h6>make up artis| freelance</h6><hr>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+			 Doloremque minima magni, mollitia sed iure doloribus dolor perferendis laboriosam?
+			  Ab, aliquid?</p></p>
+			</div>
 	</div>
-	<article class="mt-25 p-b-5"><hr><hr>
-		<div class="row rule-y">
-			<div class="m-5">
+	<article><hr><hr>
+		<div class="row ">
+			<div class="col">
 				<p>Kemampuan</p><hr><br><br>
 			
 				
@@ -25,10 +29,10 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit.</br>
 						
 				
 			</div>
-			<div class="col-8 m-5">
+			<div class="col">
 				<p>Pendidikan</p><hr>
-				<p>SMA Martaussibyan</p>
-				<u>Campakamulya kab.Cianjur</u><br><br>
+				<p>SMA Al-Furqan</p>
+				<u>Loji kab.Cianjur</u><br><br>
 				<p>YP2K Handayani</p>
 				<p>W3School</p><br><br>
 				<p>Pengalaman</p><hr>

@@ -50,6 +50,7 @@ table {
 body{
 	background: rgba(100, 100, 100, 0.5);
 }
+/*section{position: relative;}*/
 .row{
 	display: flex;
 }
@@ -236,13 +237,16 @@ ul.nav{
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) { 
-	.navbar{
+.nav{
+	display: flex;
+}
+.navbar{
 	display: flex;
 	position: fixed;
 	width: 100vw;
-	align-items: center;
-	justify-content: space-between;
-	height: 70px;
+/*	align-items: center;*/
+/*	justify-content: space-between;*/
+/*	height: 70px;*/
 	z-index: 5;
 }
 .navbrand{
@@ -256,13 +260,20 @@ ul.nav{
 	display: none;
 }
 .navbar-collapse{
-	position: absolute;
+	display: flex;
+	flex-direction: column;
+	position: unset;
 	font-size: 1.5rem;
 	top: 55px;
 	text-align: center;
 	justify-content: center;
 	text-decoration: none;
 }
+.nav-item{
+		margin: 10px;
+		border-radius: 50rem;
+		background: rgba(100, 150, 255, 0.7);
+	}
 .nav-link{
 	text-decoration: none;
 	color: #fff;
@@ -289,106 +300,94 @@ ul.nav{
 	position: relative;
 	border-radius: 1rem;
 	background:#ffffff;
-	width: 50rem;
+	width: 70vw;
 	padding: 3rem;
+	left: 50%;
+	transform: translate(-62%);
 }
-.tagline::after{
-	content: "";
-	display: block;
-	position: absolute;
-	border-left: 0px solid black;
-	border-top: 80px solid #ffffff;
-	border-right: 50px solid transparent;
-	left: 1rem;
-	top: 8rem;
-	transform: rotate(25deg);
-}
+.carousel{
+	inset: 0;
+	position: relative;
+	background: rgba(50, 50, 50, .7);
+	height: 100vh;
+	margin: 0;
 
-.slider{
-	padding-top: 1rem;
-	margin: 1rem 0;
-	background: rgba(100, 150, 255, 0.7);
-	height: 500px;
 }
-.slider .list .item{
-	inset: 0 0 0 0;
-	align-content: center;
-	text-align: center;
-	perspective: 100px;
+.carousel-inner{
+	display: flex;
 	margin: auto;
-	width: fit-content;
-	padding-top: 50px;
+	width: 80vw;
+	position: relative;
+	top: 50%;
+   left: 40%;
+   transform: translate(-50%, -50%);
+	justify-content: space-between;
+	perspective: 100px;
+	background: rgba(25, 25, 222, 0);
+	box-shadow: 0 100px 100px 100px rgba(25, 25, 222, 0.7),0 -50px 100px 100px rgba(25, 25, 222, 0.7) inset ;
 }
-.slider .list .item img{
-	margin: 50px;
-	text-replace: 1s;
+.carousel-item{
+	position:relative;
+}
+.carousel-item img{
+	border-radius: 10px;
+	border: 1px solid #aeaeae;
+	box-shadow: 2px 2px 4px;
 }
 
-/*.left{
-	float: left;
-	transition: 3s;
-	transform: rotatey(-5deg);
-	transform-style: preserve-3d;
-}
-*/
-.right{
-	animation: right 1s 1 forwards;
-	transition: 1s;
-
-}
 .left{
-	animation: left 1s 1 forwards;
-	transition: 1s;
-
+	left: 0;
+	animation: left 3s 1 forwards linear;
+}
+.carousel-item.mid{
+	z-index: 3;
+	position: fixed;
+	animation: mid 3s 1 forwards linear;
+}
+.right{
+	right: 0;
+	animation: right 3s 1 forwards linear;
 }
 .hide{
-	transition: 1s;
 	display: none;
 }
-.mid{
-	animation: mid 1s 1 forwards;
-	
+.carousel-caption{
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.5);
+	padding: .2rem;
+	border-radius: 0 0 10px 10px;
 }
-@keyframes right{
-	0%{
-		display: none;
+.carousel-caption p{
+	font-size: small;
+}
+@keyframes mid{
+	from{
+	left: 0%;
 	}
-	50%{
-		float: right;
-		transform: rotatey(2.5deg);
-		transform-style: preserve-3d;
-	}
-	100%{
-		float: right;
-		transform: rotatey(5deg);
-		transform-style: preserve-3d;
+	to{
+		left: 50%;
+		transform: translateX(-50%) scale(1.5);
 	}
 }
 @keyframes left{
-	0%{
-		display: none;
+	from{
+		transform: scale(0);
 	}
-	50%{
-		float: left;
-		transform: rotatey(-2.5deg);
-		transform-style: preserve-3d;
-	}
-	100%{
-		float: left;
-		transform: rotatey(-5deg);
-		transform-style: preserve-3d;
+	to{
+		transform: scale(1.0) rotateX(5deg);
 	}
 }
-@keyframes mid{
-	0%{
-		right: -100%;
+@keyframes right{
+	from{
+		position: fixed;
+		transform: translateX(-250%) scale(2);
 	}
-	50%{
-		transform: translateX(100%), scale(100%);
-	}
-	100%{
-		float: none;
-		transform: scale(170%);
+	to{
+		position: relative;
+		transform: scale(1.0) rotateX(5deg) translateX(0%);
 	}
 }
 .home-about .row{
@@ -410,8 +409,8 @@ ul.nav{
 	border: 1px solid;
 	margin: auto;
 	padding: 2rem;
-	font-size: 2rem;
-	word-spacing: .3rem;
+	font-size: larger;
+	word-spacing: .2rem;
 	line-height: normal;
 }
 .container.about{
@@ -448,6 +447,104 @@ ul.nav{
 		border-radius: 50rem;
 		background: rgba(100, 150, 255, 0.7);
 	}
+
+	.carousel{
+	inset: 0;
+	position: relative;
+	background: rgba(50, 50, 50, .7);
+	height: 100vh;
+	margin: 0;
+
+}
+.carousel-inner{
+	display: flex;
+	margin: auto;
+	width: 80vw;
+	position: relative;
+	top: 50%;
+   left: 40%;
+   transform: translate(-50%, -50%);
+	justify-content: space-between;
+	perspective: 100px;
+	background: rgba(25, 25, 222, 0);
+	box-shadow: 0 100px 100px 100px rgba(25, 25, 222, 0.7),0 -50px 100px 100px rgba(25, 25, 222, 0.7) inset ;
+}
+.carousel-item{
+	position:relative;
+}
+.carousel-item img{
+	border-radius: 10px;
+	border: 1px solid #aeaeae;
+	box-shadow: 2px 2px 4px;
+}
+
+.left{
+	left: 0;
+	animation: left 3s 1 forwards linear;
+}
+.carousel-item.mid{
+	z-index: 3;
+	position: fixed;
+	animation: mid 3s 1 forwards linear;
+}
+.right{
+	right: 0;
+	animation: right 3s 1 forwards linear;
+}
+.hide{
+	display: none;
+}
+.carousel-caption{
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.5);
+	padding: .2rem;
+	border-radius: 0 0 10px 10px;
+}
+.carousel-caption p{
+	font-size: small;
+}
+@keyframes mid{
+	from{
+	left: 0%;
+	}
+	to{
+		left: 50%;
+		transform: translateX(-50%) scale(2);
+	}
+}
+@keyframes left{
+	from{
+		transform: scale(0);
+	}
+	to{
+		transform: scale(1.0) rotateX(5deg);
+	}
+}
+@keyframes right{
+	from{
+		position: fixed;
+		transform: translateX(-250%) scale(2);
+	}
+	to{
+		position: relative;
+		transform: scale(1.0) rotateX(5deg) translateX(0%);
+	}
+}
+
+.tagline::after{
+	content: "";
+	display: block;
+	position: absolute;
+	border-left: 0px solid black;
+	border-top: 80px solid #ffffff;
+	border-right: 50px solid transparent;
+	left: 1rem;
+	top: 8rem;
+	transform: rotate(25deg);
+}
  }
 
 /*// X-Large devices (large desktops, 1200px and up)*/

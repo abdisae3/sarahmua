@@ -9,14 +9,24 @@ home=()=>{
   </div>
 </section>
 <section>
-   <div class="slider">
-    <div class="list">
-      <div class="item">
-        <img class=" left" src="image/download.jpeg" alt="img">
-        <img class=" mid" src="image/download (1).jpeg" alt="img">
-        <img class=" right" src="image/download (2).jpeg" alt="img">
-        <img class=" hide" src="image/downloadwisuda.jpeg" alt="img">
-      </div>
+   <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item left"><img src="image/download.jpeg" alt=""><div class="carousel-caption">
+        <h5>Slide label</h5>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste eum nobis quo distinctio, corporis a.</p>
+      </div></div>
+      <div class="carousel-item mid"><img src="image/download (1).jpeg" alt=""><div class="carousel-caption">
+        <h5>Slide label</h5>
+        <p>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Animi laudantium velit fugit! Suscipit, inventore, commodi?</p>
+      </div></div>
+      <div class="carousel-item right"><img src="image/download (2).jpeg" alt=""><div class="carousel-caption">
+        <h5>Slide label</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque facere unde deserunt dicta voluptate porro.</p>
+      </div></div>
+      <div class="carousel-item hide"><img src="image/downloadwisuda.jpeg" alt=""><div class="carousel-caption">
+        <h5>Slide label</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, harum, voluptates ad voluptate praesentium suscipit.</p>
+      </div></div>
     </div>
   </div>
 </section>
@@ -36,14 +46,16 @@ home=()=>{
 	document.querySelector('title').innerHTML='Home';
 }
 
-setInterval(()=>{
-let left = document.querySelector('.left')
-let mid = document.querySelector('.mid')
-let right = document.querySelector('.right')
-let hide = document.querySelector('.hide')
+const items = document.querySelectorAll('.carousel-item');
 
-left.className='hide'
-hide.className='right'
-right.className='mid'
-mid.className='left'
-},10000)
+function slide() {
+  const left = document.querySelector('.left')
+  const mid = document.querySelector('.mid')
+  const right = document.querySelector('.right')
+  const hide = document.querySelector('.hide')
+  left.className='carousel-item hide'
+  hide.className='carousel-item right'
+  right.className='carousel-item mid'
+  mid.className='carousel-item left'  
+}
+const slideInterval = setInterval(slide,10000)

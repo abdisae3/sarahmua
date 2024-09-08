@@ -120,14 +120,24 @@ span.hamburger{
 	background: #88f;
 	padding: 2px 20px;
 	margin: 4px;
+	transition: .5s;
 }
-.crossTop{
-	transform: rotate(30deg);
-	transform-origin: 0;
-	transition: 1s;
-} .crossMid, .crossBot{
-	background: red;
-}
+.hamburger.lineTop{
+		transition: 0.5s;
+		translate: 6px 0;
+		transform: rotate(39.5deg);
+		transform-origin: 0 0;
+	}
+	.hamburger.lineBot{
+		transition: 0.5s;
+		translate: 6px 0;
+		transform: rotate(-39.5deg);
+		transform-origin: 0 100%;
+	}
+	.hamburger.lineMid{
+		transform: scale(0);
+		transition: 0.5;
+	}
 .navbar-collapse{
 	position: absolute;
 	transform: translateX(-100%);
@@ -284,8 +294,6 @@ ul.nav{
 }
 .nav-item{
 		margin: 10px;
-		border-radius: 50rem;
-		background: rgba(100, 150, 255, 0.7);
 	}
 .nav-link{
 	text-decoration: none;
@@ -293,9 +301,14 @@ ul.nav{
 	text-shadow: 2px 2px 5px navy;
 	padding: 0 5px;
 	display: block;
+	border-radius: 50rem;
+	background: rgba(100, 150, 255, 0.7);
 }
 .nav-link:hover{
 	transform: scale(1.3);
+}
+.nav-link.active{
+	background: rgba(120, 120, 120, 1);
 }
 ul.nav{
 	list-style: none;

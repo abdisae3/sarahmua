@@ -9,9 +9,9 @@ const btnToggler = document.getElementById('btn-toggler');
 btnToggler.addEventListener('click',()=>{
 	document.getElementById('navLink').classList.toggle('toggled')
 	let hamburger = document.querySelectorAll('.hamburger')
-	hamburger[0].classList.toggle('crossTop')
-	hamburger[1].classList.toggle('crossMid')
-	hamburger[2].classList.toggle('crossBot')
+	hamburger[0].classList.toggle('lineTop')
+	hamburger[1].classList.toggle('lineMid')
+	hamburger[2].classList.toggle('lineBot')
 })
 const title= location.hash;
 if (title === "#contact") {

@@ -2,7 +2,7 @@ about=()=> {
 document.getElementById('app').innerHTML= `
 <section>
 <div class="container about">
-	<div class=" clear-fix row about">
+	<div class=" row about">
 			<img src="./image/download.jpeg" class="" alt="fauzi">
 			<div class="about">
 			<h1 >sarah naumi</h1>

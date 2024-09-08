@@ -50,7 +50,9 @@ table {
 body{
 	background: rgba(100, 100, 100, 0.5);
 }
-
+hr{
+	border-color: #000;
+}
 .row{
 	display: flex;
 }
@@ -255,11 +257,11 @@ ul.nav{
 	padding: 1rem;
 	line-height: normal;
 }
+/*end home page------------------------------------------------------*/
 .container.about{
-	padding-top: 3rem;
+	padding-top: 5rem;
 	font-size: larger;
 }
-/*end home page------------------------------------------------------*/
 
 /*about page-------------------------------------------------------------*/
 .container.about{
@@ -279,10 +281,53 @@ ul.nav{
 	margin-left: 0.2rem;
 }
 /*end about page-----------------------------------------------------------*/
+
+/*contact page----------------------------------------------------------------*/
+.contact{
+	position: relative;
+	text-align: center;
+	border: 1px solid;
+	padding-top: 5rem;
+}
+.contact .container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 70vh;
+}
+.contact h1{
+	margin: 1rem;
+	font: x-large serif;
+}
+.contact .container .wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.contact .container .wrapper .link{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+.map{
+	text-align: left;
+}
+hr{
+	width: 100%;
+	border-top: 0;
+}
+.map img{
+	border-radius: 5px;
+	margin-top: .1rem;
+}
+/*end contact page-------------------------------------------------------------*/
 }
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) { 
+/*	navbar----------------------------------------------------------------------*/
 .nav{
 	display: flex;
 }
@@ -333,6 +378,8 @@ ul.nav{
 ul.nav{
 	list-style: none;
  }
+/* end navbar--------------------------------------------------------------------------*/
+/*home page-----------------------------------------------------------------------------*/
 .tagline{
 	text-align: center;
 	position: relative;
@@ -459,6 +506,10 @@ ul.nav{
 	word-spacing: .2rem;
 	line-height: normal;
 }
+
+/*end home page----------------------------------------------------------------------*/
+
+/*about page----------------------------------------------------------------------------*/
 .container.about{
 	padding: 3rem;
 	font-size: x-large;
@@ -472,11 +523,48 @@ ul.nav{
 .about article .row .col{
 	padding: 1rem;
 }
+/*end about page-------------------------------------------------------------------------------*/
+/*contact page-----------------------------------------------------------------------------------*/
+.contact{
+	position: relative;
+	text-align: center;
+	border: 1px solid;
+	padding-top: 5rem;
+}
+.contact h1{
+	margin: 1rem;
+	font: x-large serif;
+}
+.contact .container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 70vh;
+}
+.contact .container .wrapper{
+	display: flex;
+	flex-grow: .7;
+}
+.contact .container .wrapper .link{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+.map img{
+	width: auto;
+	height: 100%;
+/*	border: 1px solid ;*/
+	border-radius: 5px;
+}
+
+/*end contact page--------------------------------------------------------------------------------*/
+
  }
 
 /*// Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
-			.navbar-toggler{
+/*navbar--------------------------------------------------------------------------------------------*/
+	.navbar-toggler{
 		display: none;
 	}	
 	.navbar-collapse{
@@ -493,7 +581,7 @@ ul.nav{
 		border-radius: 50rem;
 		background: rgba(100, 150, 255, 0.7);
 	}
-
+/*home page==============================================================================================*/
 	.carousel{
 	inset: 0;
 	position: relative;
@@ -579,7 +667,6 @@ ul.nav{
 		transform: scale(1.0) rotateX(5deg) translateX(0%);
 	}
 }
-
 .tagline::after{
 	content: "";
 	display: block;
@@ -591,6 +678,41 @@ ul.nav{
 	top: 8rem;
 	transform: rotate(25deg);
 }
+/*home page end======================================================================================*/
+/*contact page=======================================================================================*/
+.contact{
+	position: relative;
+	text-align: center;
+	border: 1px solid;
+	padding-top: 5rem;
+}
+.contact .container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 70vh;
+}
+.contact h1{
+	margin: 1rem;
+	font: x-large serif;
+}
+.contact .container .wrapper{
+	justify-content: space-between;
+	display: flex;
+	gap: 1rem;
+}
+.contact .container .wrapper .link{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+.map img{
+	width: 500px;
+	height: auto;
+	border-radius: 5px;
+}
+/*end contact page=======================================================+++++++++++++++++++++=============*/
+
  }
 
 /*// X-Large devices (large desktops, 1200px and up)*/
@@ -603,6 +725,7 @@ footer{
 	background: black;
 	color: #fff;
 	padding: 1rem;
+	position: sticky;
 }
 footer h1{
 	text-align: center;

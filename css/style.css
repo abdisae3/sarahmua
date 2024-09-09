@@ -56,6 +56,13 @@ body{
 hr{
 	border-color: #000;
 }
+.navbrand a{
+	font-family: "Herr Von Muellerhoff", cursive;
+	text-decoration: none;
+	color: blue;
+	text-shadow: 2px 2px 3px rgba(100, 150, 255, 0.7);
+	letter-spacing: .1rem;
+}
 .row{
 	display: flex;
 }
@@ -103,7 +110,6 @@ hr{
 	display: flex;
 	font-size: 2rem;
 	font-style: italic;
-	font-family: "Yellowtail", cursive;
 }
 .navbar-toggler{
 	margin-right: 30px;
@@ -126,23 +132,23 @@ span.hamburger{
 	background: #88f;
 	padding: 2px 20px;
 	margin: 4px;
-	transition: .5s;
+	transition: .3s;
 }
 .hamburger.lineTop{
-		transition: 0.5s;
+		transition: 0.3s;
 		translate: 6px 0;
 		transform: rotate(39.5deg);
 		transform-origin: 0 0;
 	}
 	.hamburger.lineBot{
-		transition: 0.5s;
+		transition: 0.3s;
 		translate: 6px 0;
 		transform: rotate(-39.5deg);
 		transform-origin: 0 100%;
 	}
 	.hamburger.lineMid{
 		transform: scale(0);
-		transition: 0.5;
+		transition: 0.3s;
 	}
 .navbar-collapse{
 	position: absolute;
@@ -320,6 +326,7 @@ hr{
 	width: 100%;
 	border-top: 0;
 }
+
 .map img{
 	border-radius: 5px;
 	margin-top: .1rem;
@@ -344,7 +351,6 @@ hr{
 	display: flex;
 	font-size: 2rem;
 	font-style: italic;
-	font-family: "Yellowtail", cursive;
 }
 .navbar-toggler{
 	display: none;
@@ -568,7 +574,10 @@ ul.nav{
 /*navbar--------------------------------------------------------------------------------------------*/
 	.navbar-toggler{
 		display: none;
-	}	
+	}
+	.navbrand a{
+	font-size: xxx-large;
+	}
 	.navbar-collapse{
 		display: flex;
 		flex-direction: column;
@@ -738,11 +747,6 @@ footer .row{
 	justify-content: space-evenly;
 }
 
-
-/*hamburger efect*/
-.hamburger.x:first-child{
-	transform: rotate(45deg);
-}
 
 
 

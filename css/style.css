@@ -49,6 +49,9 @@ table {
 }
 body{
 	background: rgba(100, 100, 100, 0.5);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 hr{
 	border-color: #000;
@@ -294,7 +297,6 @@ ul.nav{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-height: 70vh;
 }
 .contact h1{
 	margin: 1rem;
@@ -725,7 +727,7 @@ footer{
 	background: black;
 	color: #fff;
 	padding: 1rem;
-	position: sticky;
+	margin-top: auto;
 }
 footer h1{
 	text-align: center;

@@ -13,13 +13,15 @@ btnToggler.addEventListener('click',()=>{
 	hamburger[1].classList.toggle('lineMid')
 	hamburger[2].classList.toggle('lineBot')
 })
-const title= location.hash;
+let title= location.hash;
 if (title === "#contact") {
 document.addEventListener('DOMContentLoaded',contact())
 } else if (title === "#about"){
 document.addEventListener('DOMContentLoaded',about())
+}else if (title === "#pricing"){
+document.addEventListener('DOMContentLoaded',pricing())
 }else if (title === "#project"){
-document.addEventListener('DOMContentLoaded',project())
+document.addEventListener('DOMContentLoaded',features())
 }else {
 document.addEventListener('DOMContentLoaded',home())
 }

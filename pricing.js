@@ -1,35 +1,29 @@
-pricing=()=>{
+let pricingtext=""
+services.forEach(service=>{
+  pricingtext += `<div class="card">
+  <div class="row">
+    <div class="col">
+      <img src="image/${service.image}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col">
+      <div class="card-body">
+        <h5 class="card-title">${service.title}</h5>
+        <p class="card-text"><small>Rp ${service.price}</small></p>
+        <p class="card-text">${service.description}</p>
+      </div>
+    </div>
+  </div>
+</div>`
+});
+
+pricing =()=>{
+  clearInterval(slideInterval);
 	document.getElementById('app').innerHTML=
 	`<section class="p-5">
-  <div class="col-md-8 mx-auto my-5">
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="image/download.jpeg" class="img-fluid rounded-start" alt="...">
+    <div class="pricing">
+    ${pricingtext}
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="image/downloadwisuda.jpeg" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</section>`
+  </section>`
+    document.querySelector('title').innerHTML='Pricing';
+
 }

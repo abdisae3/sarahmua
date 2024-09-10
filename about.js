@@ -1,4 +1,5 @@
 about=()=> {
+		clearInterval(slideInterval);
 document.getElementById('app').innerHTML= `
 <section>
 <div class="container about">

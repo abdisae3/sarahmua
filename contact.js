@@ -1,4 +1,5 @@
 contact=()=>{
+		clearInterval(slideInterval);
 	const app= document.getElementById('app').innerHTML=`<section>
 	<div class="contact">
 		<h1>Hubungi saya di kontak berikut</h1>

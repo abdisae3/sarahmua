@@ -1,3 +1,7 @@
+:root{
+	--duration:10s;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -56,6 +60,9 @@ body{
 hr{
 	border-color: #000;
 }
+img{
+	border-radius: 5px;
+}
 .navbrand a{
 	font-family: "Herr Von Muellerhoff", cursive;
 	text-decoration: none;
@@ -104,7 +111,7 @@ hr{
 
 /*// Small devices (landscape phones, 576px and up)*/
 @media (max-width: 767px) { 
-/*	navigation----------------------------*/
+/*	navigation--------------------------------------------------------------------------------------*/
 .navbrand{
 	margin-left: 20px;
 	display: flex;
@@ -177,9 +184,9 @@ span.hamburger{
 ul.nav{
 	list-style: none;
  }
-/* end navigation--------------------------------------------------*/
+/* end navigation-------------------------------------------------------------------*/
 
-/*home page-----------------------------------------------*/
+/*home page-------------------------------------------------------------------------*/
 .jumbotron , .jumbotron::after{
 	height: 100vw;
 }
@@ -190,7 +197,7 @@ ul.nav{
 	top: 50vw;
 	left: 50vw;
 	transform: translate(-50vw);
-	font-size: xxx-large;
+	font-size: x-large;
 	background: rgba(255, 255, 255, 0.5);
 }
 .carousel{
@@ -217,7 +224,7 @@ ul.nav{
 }
 .mid{
 	position: relative;
-	animation: mid 10s linear 1 forwards;
+	animation: mid var(--duration) linear	infinite normal none;
 }
 @keyframes mid {
 	0%{
@@ -332,11 +339,48 @@ hr{
 	margin-top: .1rem;
 }
 /*end contact page-------------------------------------------------------------*/
+/*pricing page------------------------------------------------------------------*/
+.pricing{
+	position: relative;
+	top: 4rem;
+	margin-bottom: 5rem;
+}
+.pricing .row{
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto 1rem auto;
+	border: 1px solid;
+	width: 91.66666666666667vw;
+	padding: 0.5rem;
+	background: #fff;
+}
+.card-title, .card-text{
+	margin: 1rem 0;
+}
+.pricing .row h5{
+	font-size: larger;
+}
+/*end pricing page------------------------------------------------------------------*/
+/*features page----------------------------------------------------------------*/
+.features{
+	position: relative;
+	top: 4rem;
+	margin-bottom: 5rem;
+}
+.features .row{
+	flex-direction: column;
+	margin: 0.3rem;
+	border: 1px solid;
+}
+.features .col h2{
+	font-size: larger;
+}
+/*end features page------------------------------------------------------------*/
 }
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) { 
-/*	navbar----------------------------------------------------------------------*/
+/*	navbar+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .nav{
 	display: flex;
 }
@@ -366,7 +410,7 @@ hr{
 	text-decoration: none;
 }
 .nav-item{
-		margin: 10px;
+		margin-right:2rem ;
 	}
 .nav-link{
 	text-decoration: none;
@@ -386,8 +430,8 @@ hr{
 ul.nav{
 	list-style: none;
  }
-/* end navbar--------------------------------------------------------------------------*/
-/*home page-----------------------------------------------------------------------------*/
+/* end navbar+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*home page+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .tagline{
 	text-align: center;
 	position: relative;
@@ -395,22 +439,17 @@ ul.nav{
 	top: 50vh;
 	left: 50vw;
 	transform: translate(-55vw);
-	font-size: xxx-large;
-}
-.tagline{
-	position: relative;
+	font-size: xx-large;
 	border-radius: 1rem;
-	background:#ffffff;
+	background:rgba(255, 255, 255, .5);
 	width: 70vw;
 	padding: 3rem;
-	left: 50%;
-	transform: translate(-62%);
 }
 .carousel{
 	inset: 0;
 	position: relative;
 	background: rgba(50, 50, 50, .7);
-	height: 100vh;
+	height: min(100vh, 700px);
 	margin: 0;
 
 }
@@ -437,17 +476,15 @@ ul.nav{
 }
 
 .left{
-	left: 0;
-	animation: left 3s 1 forwards linear;
+	animation: left var(--duration) linear infinite normal none;
 }
 .carousel-item.mid{
 	z-index: 3;
 	position: fixed;
-	animation: mid 3s 1 forwards linear;
+	animation: mid var(--duration) linear	infinite normal none;
 }
 .right{
-	right: 0;
-	animation: right 3s 1 forwards linear;
+	animation: right var(--duration) linear infinite normal none;
 }
 .hide{
 	display: none;
@@ -465,28 +502,39 @@ ul.nav{
 	font-size: small;
 }
 @keyframes mid{
-	from{
-	left: 0%;
+	0%{
+	left: 100%;
 	}
-	to{
+	10%{
 		left: 50%;
-		transform: translateX(-50%) scale(1.5);
+		transform: translateX(-50%) scale(2);
 	}
-}
-@keyframes left{
-	from{
-		transform: scale(0);
-	}
-	to{
-		transform: scale(1.0) rotateX(5deg);
+	100%{
+		left: 50%;
+		transform: translateX(-50%) scale(2);
 	}
 }
 @keyframes right{
-	from{
-		position: fixed;
-		transform: translateX(-250%) scale(2);
+	0%{
+		transform: scale(1);
 	}
-	to{
+	10%{
+		transform: scale(1.0) rotateX(5deg);
+	}
+	100%{
+		transform: scale(1.0) rotateX(5deg);
+	}
+}
+@keyframes left{
+	0%{
+		position: fixed;
+		transform: translateX(250%) scale(2);
+	}
+	10%{
+		position: relative;
+		transform: scale(1.0) rotateX(5deg) translateX(0%);
+	}
+	100%{
 		position: relative;
 		transform: scale(1.0) rotateX(5deg) translateX(0%);
 	}
@@ -515,9 +563,9 @@ ul.nav{
 	line-height: normal;
 }
 
-/*end home page----------------------------------------------------------------------*/
+/*end home page+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-/*about page----------------------------------------------------------------------------*/
+/*about page++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .container.about{
 	padding: 3rem;
 	font-size: x-large;
@@ -531,8 +579,8 @@ ul.nav{
 .about article .row .col{
 	padding: 1rem;
 }
-/*end about page-------------------------------------------------------------------------------*/
-/*contact page-----------------------------------------------------------------------------------*/
+/*end about page ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*contact page ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .contact{
 	position: relative;
 	text-align: center;
@@ -565,13 +613,61 @@ ul.nav{
 	border-radius: 5px;
 }
 
-/*end contact page--------------------------------------------------------------------------------*/
-
+/*end contact page++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*pricing page +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.pricing{
+	position: relative;
+	margin: 5rem 5rem 1rem 5rem ;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+.pricing .card{
+	display: flex;
+	margin-bottom: 1rem;
+	background: #fff;
+}
+.pricing .row{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid;
+	width: 33.333333333333336vw;
+}
+.pricing .row .col{
+	margin: 1rem;
+}
+.card-title{
+	font-size: x-large;
+}
+.card-text{
+	margin-top: 1rem;
+}
+/*end pricing page +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*features page++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.features{
+	position: relative;
+	margin: 5rem;
+}
+.features .row{
+	border: 1px solid;
+	margin: 1rem;
+	background: #fff;
+}
+.features .col{
+	margin: 1rem;
+	gap: 1rem;
+}
+.features .col img{
+	border-radius: 5px;
+}
+.features h2{
+	font-size: x-large;
+}
  }
 
 /*// Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
-/*navbar--------------------------------------------------------------------------------------------*/
+/*navbar===========================================================================================*/
 	.navbar-toggler{
 		display: none;
 	}
@@ -588,7 +684,7 @@ ul.nav{
 		display: flex;
 	}
 	.nav-item{
-		margin: 50px;
+		margin-right:2rem;
 		border-radius: 50rem;
 		background: rgba(100, 150, 255, 0.7);
 	}
@@ -624,17 +720,17 @@ ul.nav{
 }
 
 .left{
+	animation: left var(--duration) linear infinite normal none;
 	left: 0;
-	animation: left 3s 1 forwards linear;
 }
 .carousel-item.mid{
-	z-index: 3;
+/*	z-index: 3;*/
 	position: fixed;
-	animation: mid 3s 1 forwards linear;
+	animation: mid var(--duration) linear infinite normal none;
 }
 .right{
-	right: 0;
-	animation: right 3s 1 forwards linear;
+/*	right: 0;*/
+	animation: right var(--duration) linear infinite normal none;
 }
 .hide{
 	display: none;
@@ -652,33 +748,44 @@ ul.nav{
 	font-size: small;
 }
 @keyframes mid{
-	from{
-	left: 0%;
+	0%{
+	left: 100%;
 	}
-	to{
+	10%{
+		left: 50%;
+		transform: translateX(-50%) scale(2);
+	}
+	100%{
 		left: 50%;
 		transform: translateX(-50%) scale(2);
 	}
 }
-@keyframes left{
-	from{
-		transform: scale(0);
+@keyframes right{
+	0%{
+		transform: scale(1);
 	}
-	to{
+	10%{
+		transform: scale(1.0) rotateX(5deg);
+	}
+	100%{
 		transform: scale(1.0) rotateX(5deg);
 	}
 }
-@keyframes right{
-	from{
+@keyframes left{
+	0%{
 		position: fixed;
-		transform: translateX(-250%) scale(2);
+		transform: translateX(250%) scale(2);
 	}
-	to{
+	10%{
+		position: relative;
+		transform: scale(1.0) rotateX(5deg) translateX(0%);
+	}
+	100%{
 		position: relative;
 		transform: scale(1.0) rotateX(5deg) translateX(0%);
 	}
 }
-.tagline::after{
+/*.tagline::after{
 	content: "";
 	display: block;
 	position: absolute;
@@ -688,7 +795,7 @@ ul.nav{
 	left: 1rem;
 	top: 8rem;
 	transform: rotate(25deg);
-}
+}*/
 /*home page end======================================================================================*/
 /*contact page=======================================================================================*/
 .contact{
@@ -723,11 +830,23 @@ ul.nav{
 	border-radius: 5px;
 }
 /*end contact page=======================================================+++++++++++++++++++++=============*/
-
+/*pricing page =============================================================================================*/
+.pricing .row{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid;
+	width: 16.666666666666668vw;
+}
+/*end pricing page =============================================================================================*/
  }
 
 /*// X-Large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) { ... }
+@media (min-width: 1200px) { 
+	.nav-item{
+/*		margin-left: 1rem;*/
+		margin-right: 5rem;
+	}
+ }
 
 /*// XX-Large devices (larger desktops, 1400px and up)*/
 @media (min-width: 1400px) { ... }

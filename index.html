@@ -8,13 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="style/style.css">
 	<title>Sarahmua</title>
 </head>
 <body>
 <!-- navbar -->
-<div id="navbar" class="navbar">
-  <div class="navbrand"><a href="">Sarah Naumi</a></div>
+<div id="navbar" class="navbar display_flex">
+  <div class="navbrand"><a href="" class="text-decoration_none cl_blue">Sarah Naumi</a></div>
   <div class="navbar-toggler">
     <button id="btn-toggler"></button>
     <span class="hamburger"></span>
@@ -22,12 +22,12 @@
     <span class="hamburger"></span>
   </div>
   <div class="collapse navbar-collapse" id="navLink">
-    <ul class="nav">
+    <ul class="nav Mdisplay_flex">
       <li class="nav-item"><a id="home" class="nav-link" onclick="home()" href="#home" >Home</a></li>
       <li class="nav-item"><a id="about" class="nav-link" onclick="about()" href="#about" >About</a></li>
       <li class="nav-item"><a id="contact" class="nav-link" onclick="contact()" href="#contact" >Contact</a></li>
-      <li class="nav-item"><a id="blog" class="nav-link" onclick="pricing()" href="#pricing" >Project</a></li>
-      <li class="nav-item"><a id="blog" class="nav-link" onclick="features()" href="#features" >features</a></li>
+      <li class="nav-item"><a id="blog" class="nav-link" onclick="pricing()" href="#pricing" >Service</a></li>
+      <li class="nav-item"><a id="blog" class="nav-link" onclick="features()" href="#features" >Testimony</a></li>
     </ul>
   </div>
 </div>
@@ -53,13 +53,15 @@
   </div>
   </div>
 </footer>
-  <script src="define.js"></script>
-<script  src="home.js"></script>
-<script  src="carousel.js"></script>
-<script  src="about.js"></script>
-<script  src="contact.js"></script>
-<script  src="project.js"></script>
-<script  src="pricing.js"></script>
-<script  src="main.js"></script>
+  <script src="privat/define.js"></script>
+  <script src="privat/testy.js"></script>
+<script  src="page/home.js"></script>
+<script  src="style/carousel.js"></script>
+<script  src="page/about.js"></script>
+<script  src="page/contact.js"></script>
+<script  src="page/project.js"></script>
+<script  src="page/pricing.js"></script>
+<script  src="page/main.js"></script>
+<script  src="style/style.js"></script>
 </body>
 </html>

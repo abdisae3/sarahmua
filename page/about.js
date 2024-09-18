@@ -1,5 +1,4 @@
-about=()=> {
-		clearInterval(slideInterval);
+export default function about(){
 document.getElementById('app').innerHTML= `
 <section>
 <div class="container about" id="about">
@@ -43,5 +42,4 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit.</br>
 	</article>
 </div>
 </section>`
-document.querySelector('title').innerHTML='About';
 }

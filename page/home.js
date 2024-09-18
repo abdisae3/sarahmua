@@ -1,5 +1,5 @@
-
-home=()=>{
+import carousel from '../style/carousel.js'
+function home(){
 	document.getElementById('app').innerHTML=
 	`<section>
   <div class="jumbotron ">
@@ -34,3 +34,4 @@ Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Minima dolor similiqu
 	document.querySelector('title').innerHTML='Home';
   carousel();
 }
+export default home;

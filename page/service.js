@@ -1,3 +1,4 @@
+import services from '../privat/define.js'
 let pricingtext=""
 services.forEach(service=>{
   pricingtext += `<div class="card">
@@ -16,14 +17,11 @@ services.forEach(service=>{
 </div>`
 });
 
-pricing =()=>{
-  clearInterval(slideInterval);
+export default function service(){
 	document.getElementById('app').innerHTML=
 	`<section class="p-5">
     <div class="pricing">
     ${pricingtext}
     </div>
   </section>`
-    document.querySelector('title').innerHTML='Pricing';
-
 }

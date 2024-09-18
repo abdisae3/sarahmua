@@ -1,3 +1,4 @@
+import services from '../privat/define.js'
 const service = [];
 services.forEach(item=>{
         service.push(item)        
@@ -35,3 +36,5 @@ right.innerHTML = `<img src="image/${service[2].image}" alt="image3"><div class=
       </div>`;
 },10000);
 }
+
+export default carousel;

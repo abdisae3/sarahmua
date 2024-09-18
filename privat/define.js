@@ -56,3 +56,5 @@ const services = [
 			'description':'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores fuga optio enim rem, tempore in laborum accusantium eius quibusdam iste!'
 		}
 	]
+
+export default services;

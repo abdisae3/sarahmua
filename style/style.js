@@ -1,3 +1,4 @@
+function style(){getClass(tag)}
 document.head.appendChild(document.createElement('style'));
 const tag =['p','hr','acronym','abbr','address','b','bdi','bdo','big','blockquote','center','cite','code','del','dfn','em','font','i','ins','kbd','mark','meter','pre','progress','q','rp','rt','ruby','s','samp','small','strike','strong','sub','sup','time','tt','u','var','wbr','form','input','textarea','button','select','optgroup','option','label','fieldset','legend','datalist','keygen','output','frame','frameset','noframes','iframe','img','map','area','canvas','figcaption','figure','audio','source','track','video','a','link','nav','ul','ol','li','dir','dl','dt','dd','menu','command','table','caption','th','tr','td','thead','tbody','tfoot','col','colgroup','div','span','footer','hgroup','section','article','aside','details','dialog','summary','base','basefont','applet','embed','object','param','h1','h2','h3','h4','h5','h6']
 function getClass(tag) {
@@ -8,7 +9,6 @@ function getClass(tag) {
   })
   cls(node)
 }
-getClass(tag)
 function cls(z) {
 const element=[]
 const classes=[]
@@ -56,20 +56,26 @@ for (let i = 0; i < el.length; i++) {
     if (val[i] !== undefined) {
 val[i]= val[i].replace(/P$/,'%');
 prop[i]=acronim(prop[i])
-  if (el[i].match(/^[S]/)) {
+  switch(el[i].charAt(0)){
+    case 'S':
   sm.push(`.${el[i]}{${prop[i]}:${val[i]};}`)
-  }else if (el[i].match(/^[M]/)) {
+   break;
+   case 'M':
   md.push(`.${el[i]}{${prop[i]}:${val[i]};}`)
-  }else if (el[i].match(/^[L]/)) {
+   break;
+   case 'L':
   lg.push(`.${el[i]}{${prop[i]}:${val[i]};}`)
-  }else{
-  rule.push(`.${el[i]}{${prop[i]}:${val[i]};}`);    
-  }}
+   break;
+   default:
+  rule.push(`.${el[i]}{${prop[i]}:${val[i]};}`);
+  }
+
+}
  }
  small(sm);
  medium(md);
  large(lg);
-   rules=newSet(rule);
+   const rules=newSet(rule);
    rules.forEach((rule)=>{
     sheetRule(rule)
   })
@@ -122,12 +128,15 @@ function acronim(key) {
         mb:'margin-bottom',
         ml:'margin-left',
         mr:'margin-right',
-        fs:'font:size',
+        fs:'font-size',
         bg:'background',
-        cl:'color'
+        cl:'color',
+        br:'border-radius',
+        l:'left',
+        r:'right'
 };
 const abbr = Object.getOwnPropertyDescriptor(obj,key);
 return abbr?abbr.value:key
 }
 
-
+export default style;

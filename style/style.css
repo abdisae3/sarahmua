@@ -163,7 +163,7 @@ span.hamburger{
 .navbar-collapse{
 	position: absolute;
 	transform: translateX(-100%);
-	transition: 1s;
+	transition: .3s;
 	font-size: 1.5rem;
 	width: 100vw;
 	top: 55px;
@@ -173,7 +173,7 @@ span.hamburger{
 }
 .navbar-collapse.toggled{
 	transform: translateX(0);
-	transition-duration: 1s;
+	transition-duration: .3s;
 	background: rgba(200, 200, 200, 0.7);
 }
 .nav-link{
@@ -191,13 +191,13 @@ ul.nav{
 
 /*home page-------------------------------------------------------------------------*/
 .jumbotron , .jumbotron::after{
-	height: 100vw;
+	height: 100vh;
 }
 .tagline{
 	text-align: center;
 	position: relative;
 	margin: auto;
-	top: 50vw;
+	top: 50vh;
 	left: 50vw;
 	transform: translate(-50vw);
 	font-size: x-large;
@@ -657,8 +657,8 @@ ul.nav{
 	background: #fff;
 }
 .features .col{
-	margin: 1rem;
-	gap: 1rem;
+/*	margin: 1rem;*/
+/*	gap: 1rem;*/
 }
 .features .col img{
 	border-radius: 5px;

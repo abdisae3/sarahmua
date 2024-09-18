@@ -1,5 +1,4 @@
-contact=()=>{
-		clearInterval(slideInterval);
+export default function contact(){
 	const app= document.getElementById('app').innerHTML=`<section>
 	<div class="contact">
 		<h1>Hubungi saya di kontak berikut</h1>
@@ -18,5 +17,4 @@ contact=()=>{
 		</div>
 	</div>
 </section>`
-	document.querySelector('title').innerHTML='Contact';
 }

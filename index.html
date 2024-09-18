@@ -2,14 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+  <meta name="description" content="Temukan layanan makeup art dan wedding makeup terbaik. Tampilkan gaya makeup terbaru dan inspirasi untuk acara istimewa Anda dengan profesionalisme tinggi.">
+  <meta name="keywords" content="makeup art, wedding makeup, bridal makeup, makeup artist, beauty services, makeup inspiration">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.sarahmua.vercel.app/">
+  <!-- untuk facebook -->
+  <!-- <meta property="og:title" content="Makeup Art & Wedding Makeup | Karya Kreatif dan Profesional"> -->
+  <!-- <meta property="og:description" content="Temukan layanan makeup art dan wedding makeup terbaik. Dapatkan inspirasi makeup terbaru dan layanan profesional untuk acara istimewa Anda."> -->
+  <!-- <meta property="og:image" content="https://www.example.com/images/makeup-art-thumbnail.jpg"> -->
+  <!-- <meta property="og:url" content="https://www.example.com/makeup-art-wedding-makeup"> -->
+  <!-- <meta property="og:type" content="website"> -->
+  <!-- untuk twitter -->
+  <!-- <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- <meta name="twitter:title" content="Makeup Art & Wedding Makeup | Karya Kreatif dan Profesional"> -->
+  <!-- <meta name="twitter:description" content="Temukan layanan makeup art dan wedding makeup terbaik. Tampilkan gaya makeup terbaru dan inspirasi untuk acara istimewa Anda dengan profesionalisme tinggi."> -->
+  <!-- <meta name="twitter:image" content="https://www.example.com/images/makeup-art-thumbnail.jpg"> -->
+  <!-- <meta name="twitter:url" content="https://www.example.com/makeup-art-wedding-makeup"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' nonce-abdi$356;">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style/style.css">
-	<title>Sarahmua</title>
+	<title>Sarahmua | Makeup Art & Wedding Makeup | Karya Kreatif dan Profesional</title>
+
 </head>
 <body>
 <!-- navbar -->
@@ -23,11 +41,11 @@
   </div>
   <div class="collapse navbar-collapse" id="navLink">
     <ul class="nav Mdisplay_flex">
-      <li class="nav-item"><a id="home" class="nav-link" onclick="home()" href="#home" >Home</a></li>
-      <li class="nav-item"><a id="about" class="nav-link" onclick="about()" href="#about" >About</a></li>
-      <li class="nav-item"><a id="contact" class="nav-link" onclick="contact()" href="#contact" >Contact</a></li>
-      <li class="nav-item"><a id="blog" class="nav-link" onclick="pricing()" href="#pricing" >Service</a></li>
-      <li class="nav-item"><a id="blog" class="nav-link" onclick="features()" href="#features" >Testimony</a></li>
+      <li class="nav-item"><a id="home" name="home" class="nav-link active" href="#home" >Home</a></li>
+      <li class="nav-item"><a id="about" name="about" class="nav-link"  href="#about" >About</a></li>
+      <li class="nav-item"><a id="contact" name="contact" class="nav-link" href="#contact" >Contact</a></li>
+      <li class="nav-item"><a id="service" name="pricing" class="nav-link" href="#service" >Service</a></li>
+      <li class="nav-item"><a id="testimony" name="project" class="nav-link" href="#testimony" >Testimony</a></li>
     </ul>
   </div>
 </div>
@@ -53,15 +71,7 @@
   </div>
   </div>
 </footer>
-  <script src="privat/define.js"></script>
-  <script src="privat/testy.js"></script>
-<script  src="page/home.js"></script>
-<script  src="style/carousel.js"></script>
-<script  src="page/about.js"></script>
-<script  src="page/contact.js"></script>
-<script  src="page/project.js"></script>
-<script  src="page/pricing.js"></script>
-<script  src="page/main.js"></script>
-<script  src="style/style.js"></script>
+<script type="module" nonce="abdi$356" src="page/main.js"></script>
 </body>
 </html>
+
